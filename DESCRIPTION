@@ -1,23 +1,25 @@
 Package: multiCA
 Type: Package
 Title: Multinomial Cochran-Armitage Trend Test
-Version: 1.1
-Date: 2017-08-07
-Author: Aniko Szabo
+Version: 1.2.0
+Date: 2025-03-25
 Depends: R(>= 2.10)
 Imports: bitops, multcomp
-Maintainer: Aniko Szabo <aszabo@mcw.edu>
 Description: Implements a generalization of the Cochran-Armitage trend test to
     multinomial data. In addition to an overall test, multiple testing adjusted
     p-values for trend in individual outcomes and power calculation is
     available.
 License: GPL (>= 2)
-RoxygenNote: 5.0.1
+Encoding: UTF-8
+RoxygenNote: 7.2.3
 Suggests: testthat
-Repository: CRAN
-Repository/R-Forge/Project: corrbin
-Repository/R-Forge/Revision: 106
-Repository/R-Forge/DateTimeStamp: 2017-08-07 16:05:30
-Date/Publication: 2017-08-07 19:36:33 UTC
+URL: https://github.com/anikoszabo/multiCA
+BugReports: https://github.com/anikoszabo/multiCA/issues
+Authors@R: 
+    person("Aniko", "Szabo", , "aszabo@mcw.edu", role = c("aut", "cre"))
 NeedsCompilation: no
-Packaged: 2017-08-07 16:25:12 UTC; rforge
+Packaged: 2025-03-25 22:17:26 UTC; aszabo
+Author: Aniko Szabo [aut, cre]
+Maintainer: Aniko Szabo <aszabo@mcw.edu>
+Repository: CRAN
+Date/Publication: 2025-03-25 22:40:06 UTC

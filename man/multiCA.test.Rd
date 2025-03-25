@@ -8,22 +8,28 @@
 \usage{
 multiCA.test(x, ...)
 
-\method{multiCA.test}{default}(x, scores = 1:ncol(x), outcomes = 1:nrow(x),
-  p.adjust.method = c("none", "closed.set", "Holm-Shaffer", "single-step",
-  "Westfall"), ...)
+\method{multiCA.test}{default}(
+  x,
+  scores = 1:ncol(x),
+  outcomes = 1:nrow(x),
+  p.adjust.method = c("none", "closed.set", "Holm-Shaffer", "single-step", "Westfall"),
+  ...
+)
 
 \method{multiCA.test}{formula}(formula, data, subset, na.action, weights, ...)
 }
 \arguments{
 \item{x}{a two-dimensional matrix of event counts with the outcomes as rows and ordered groups as columns.}
 
-\item{scores}{non-decreaseing numeric vector of the same length as the number of ordered groups. Defaults to linearly increasing values}
+\item{\dots}{other arguments}
+
+\item{scores}{non-decreasing numeric vector of the same length as the number of ordered groups. Defaults to linearly increasing values}
 
 \item{outcomes}{integer or character vector defining the set of outcomes (by row index or row name) over which the trend should be tested. Defaults to all outcomes.}
 
 \item{p.adjust.method}{character string defining the correction method for individual outcome p-values. Defaults to "closed.set" when \code{length(outcomes)<=3}, and "Holm-Shaffer" otherwise.}
 
-\item{formula}{a formula of the form \code{outcome ~ group} where \code{outcome} is a factor representing the cateogrical outcome and \code{group} is the grouping variable over which the trend is tested.}
+\item{formula}{a formula of the form \code{outcome ~ group} where \code{outcome} is a factor representing the categorical outcome and \code{group} is the grouping variable over which the trend is tested.}
 
 \item{data}{an optional matrix or data frame containing the variables in the formula \code{formula}. By default the variables are taken from \code{environment(formula).}}
 
@@ -32,8 +38,6 @@ multiCA.test(x, ...)
 \item{na.action}{a function which indicates what should happen when the data contain NAs. Defaults to getOption("na.action").}
 
 \item{weights}{an integer-valued variable representing the number of times each \code{outcome} - \code{group} combination was observed.}
-
-\item{\dots}{other arguments}
 }
 \value{
 a list with two components
@@ -58,11 +62,10 @@ strk.mat <- xtabs(Freq ~ Type + Year, data=stroke)
 multiCA.test(strk.mat, outcomes=1:3)
 
 }
+\references{
+Szabo, A. (2018). Test for Trend With a Multinomial Outcome. The American Statistician, 73(4), 313–320.
+}
 \author{
 Aniko Szabo
 }
-\references{
-Szabo, A. (2016) Test for trend with a multinomial outcome.
-}
 \keyword{nonparametric}
-
